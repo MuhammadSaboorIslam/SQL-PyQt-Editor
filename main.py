@@ -27,7 +27,7 @@ class SQLDataViewer(QMainWindow):
         self.dataframes = {}
 
         for table_name in table_names:
-            df = read_sql_to_dataframe('Sample-SQL-File-100-Rows.sql', table_name)
+            df = read_sql_to_dataframe('Sample.sql', table_name)
             self.dataframes[table_name] = df
 
         self.table_names = table_names
@@ -73,7 +73,7 @@ class SQLDataViewer(QMainWindow):
 def main():
     app = QApplication(sys.argv)
 
-    table_names = extract_table_names("Sample-SQL-File-100-Rows.sql")
+    table_names = extract_table_names("Sample.sql")
     print(table_names)
     window = SQLDataViewer(table_names)
     window.show()
